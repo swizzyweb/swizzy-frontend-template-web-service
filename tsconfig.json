@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2016", // Or a more recent ECMAScript version (e.g., "es2020", "esnext") based on your Node.js environment
+    "module": "commonjs", // Or "esnext" if your service uses ES modules (and you have "type": "module" in package.json)
+    "outDir": "./dist", // Output directory for compiled JavaScript files from your service code
+    //"rootDir": "./", // Specifies the root directory of input files. Relative to this tsconfig.json.
+    "strict": true, // Enable all strict type-checking options for robust code
+    "esModuleInterop": true, // Allows default imports from modules with no default export
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts)
+    "forceConsistentCasingInFileNames": true, // Ensure consistent casing for file paths
+    "resolveJsonModule": true, // Allows importing .json files in your service code
+    "sourceMap": true // Generates source map files for debugging
+  },
+  "include": [
+    // Include all .ts files in the current directory (./src/) and its subdirectories
+    "src" // Include declaration files if any
+    //"react/home.tsx",
+    //    "react/search.tsx"
+  ],
+  "exclude": [
+    "node_modules", // Exclude the node_modules directory
+    "./react", // Explicitly exclude the React application's directory
+    "./bundle" // Exclude the webpack output directory
+  ]
+}
