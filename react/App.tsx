@@ -1,18 +1,8 @@
 import React, { useState } from "react"; // Keep this as it's the actual library import
+import { FunnyJokeTeller } from "./FunnyJokeTeller";
 
 // Main App component
 const App = () => {
-  const [funnyJoke, setFunnyJoke] = useState(undefined);
-
-  async function getFunnyJoke() {
-    const res = await fetch("http://localhost:3005/api/funnyJoke", {
-      method: "get",
-    });
-    const body = await res.json();
-    const newFunnyJoke = `${body.message}... ${body.joke}`;
-    setFunnyJoke(newFunnyJoke);
-  }
-
   return (
     <div className="min-h-screen bg-gray-100 font-sans antialiased flex flex-col">
       {/* Header Section */}
@@ -123,17 +113,7 @@ const App = () => {
               our funny joke API by clicking the button below.
             </p>
 
-            <button
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 mt-5 mb-5"
-              onClick={getFunnyJoke}
-            >
-              Get funny joke
-            </button>
-            {funnyJoke && (
-              <div>
-                <p id="FunnyJoke">{funnyJoke}</p>
-              </div>
-            )}
+            <FunnyJokeTeller />
           </div>
         </section>
       </main>

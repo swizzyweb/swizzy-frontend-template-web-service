@@ -12,7 +12,10 @@ import path from "path";
 // @ts-ignore
 import express from "@swizzyweb/express";
 import { FunnyJokeController } from "./controllers/funny-joke-controller";
-export interface ApiRouterState {}
+import { IFunnyJokeClient } from "../../client";
+export interface ApiRouterState {
+  funnyJokeClient: IFunnyJokeClient;
+}
 
 export interface ApiRouterProps
   extends IWebRouterProps<SampleFrontendWebServiceState, ApiRouterState> {}

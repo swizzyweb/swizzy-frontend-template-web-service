@@ -1,8 +1,11 @@
 import { IWebServiceProps, WebService } from "@swizzyweb/swizzy-web-service";
 import { PageWebRouter } from "./routers/PageRouter/page-router";
 import { ApiWebRouter } from "./routers/ApiRouter/api-router";
+import { FunnyJokeClient, IFunnyJokeClient } from "./client";
 
-export interface SampleFrontendWebServiceState {}
+export interface SampleFrontendWebServiceState {
+  funnyJokeClient: IFunnyJokeClient;
+}
 
 export interface SampleFrontendWebServiceProps
   extends IWebServiceProps<SampleFrontendWebServiceState> {
