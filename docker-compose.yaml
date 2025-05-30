@@ -1,0 +1,8 @@
+services:
+  swizzywebsite:
+    build: .
+    ports:
+      - 3705:3005
+    volumes:
+      - ./logs:/home/app/logs
+      - ./appdata:/home/app/appdata
