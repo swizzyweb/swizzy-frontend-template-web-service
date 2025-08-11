@@ -7,10 +7,16 @@ import {
   SwizzyRequestMiddleware,
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
-import { SampleFrontendWebServiceState } from "../../web-service";
+import { SampleFrontendWebServiceState } from "../../web-service.js";
 import path from "path";
 // @ts-ignore
 import express from "@swizzyweb/express";
+import { fileURLToPath } from "node:url";
+
+// This gives you the directory where *this* file is located
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export interface PageRouterState {}
 
 export interface PageRouterProps

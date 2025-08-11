@@ -1,1 +1,1 @@
-export * from "./funny-joke-client";
+export * from "./funny-joke-client.js";

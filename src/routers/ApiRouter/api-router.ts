@@ -7,12 +7,12 @@ import {
   SwizzyRequestMiddleware,
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
-import { SampleFrontendWebServiceState } from "../../web-service";
+import { SampleFrontendWebServiceState } from "../../web-service.js";
 import path from "path";
 // @ts-ignore
 import express from "@swizzyweb/express";
-import { FunnyJokeController } from "./controllers/funny-joke-controller";
-import { IFunnyJokeClient } from "../../client";
+import { FunnyJokeController } from "./controllers/funny-joke-controller.js";
+import { IFunnyJokeClient } from "../../client/index.js";
 export interface ApiRouterState {
   funnyJokeClient: IFunnyJokeClient;
 }

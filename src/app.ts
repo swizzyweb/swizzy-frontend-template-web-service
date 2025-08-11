@@ -1,5 +1,5 @@
-import { FunnyJokeClient } from "./client";
-import { SampleFrontendWebService } from "./web-service";
+import { FunnyJokeClient } from "./client/index.js";
+import { SampleFrontendWebService } from "./web-service.js";
 
 export interface GetSampleFrontendWebserviceProps {
   serviceArgs: {
