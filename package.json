@@ -44,8 +44,8 @@
   },
   "dependencies": {
     "@swizzyweb/express": "^4.19.2",
-    "@swizzyweb/swizzy-common": "^0.3.0",
-    "@swizzyweb/swizzy-web-service": "^0.5.0",
+    "@swizzyweb/swizzy-common": "^0.3.2",
+    "@swizzyweb/swizzy-web-service": "^0.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
