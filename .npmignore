@@ -1,5 +1,4 @@
-dist
-bundle
 node_modules
 logs
 appdata
+data
