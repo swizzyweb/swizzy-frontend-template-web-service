@@ -9,8 +9,7 @@ import {
 } from "@swizzyweb/swizzy-web-service";
 import { SampleFrontendWebServiceState } from "../../web-service.js";
 import path from "path";
-// @ts-ignore
-import express from "@swizzyweb/express";
+import express from "express";
 import { fileURLToPath } from "node:url";
 
 // This gives you the directory where *this* file is located

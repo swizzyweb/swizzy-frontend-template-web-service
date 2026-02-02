@@ -13,7 +13,7 @@ export function FunnyJokeTeller(props: any) {
   let [punchlineText, setPunchlineText] = useState("");
   let [categoryText, setCategoryText] = useState("");
   async function getFunnyJoke() {
-    const res = await fetch("/api/funnyJoke", {
+    const res = await fetch("api/funnyJoke", {
       method: "get",
     });
     const body = await res.json();

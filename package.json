@@ -1,6 +1,6 @@
 {
   "name": "@swizzyweb/swizzy-frontend-template-web-service",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Template for swizzyweb frontend web services",
   "main": "dist/app.js",
   "type": "module",
@@ -11,7 +11,9 @@
     "build:service": "tsc",
     "build": "npm run build:webpack && npm run build:service",
     "start:webpack": "webpack serve --config webpack.config.cjs",
-    "build:webpack": "webpack --config webpack.config.cjs"
+    "build:webpack": "webpack --config webpack.config.cjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "react",
@@ -20,17 +22,21 @@
     "route-optimizer",
     "typescript"
   ],
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
-    "@swizzyweb/swerve": "^0.5.6",
+    "@swizzyweb/swerve": "^0.6.0",
     "@tailwindcss/postcss": "^4.1.13",
+    "@types/express": "^5.0.6",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
     "autoprefixer": "^10.4.21",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
+    "eslint": "^9.39.2",
     "html-webpack-plugin": "^5.6.4",
     "mini-css-extract-plugin": "^2.9.4",
     "postcss": "^8.5.6",
@@ -43,9 +49,10 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
-    "@swizzyweb/express": "^4.19.2",
-    "@swizzyweb/swizzy-common": "^0.3.2",
-    "@swizzyweb/swizzy-web-service": "^0.5.4",
+    "@swizzyweb/express-unuse": "^1.0.1",
+    "@swizzyweb/swizzy-common": "^0.3.3",
+    "@swizzyweb/swizzy-web-service": "^0.6.0",
+    "express": "^5.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
