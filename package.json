@@ -1,6 +1,6 @@
 {
   "name": "@swizzyweb/swizzy-frontend-template-web-service",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Template for swizzyweb frontend web services",
   "main": "dist/app.js",
   "type": "module",
@@ -28,7 +28,7 @@
     "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
-    "@swizzyweb/swerve": "^0.6.0",
+    "@swizzyweb/swerve": "^0.6.2",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/express": "^5.0.6",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
@@ -50,8 +50,9 @@
   },
   "dependencies": {
     "@swizzyweb/express-unuse": "^1.0.1",
+    "@swizzyweb/swerve-manager": "^0.3.2",
     "@swizzyweb/swizzy-common": "^0.3.3",
-    "@swizzyweb/swizzy-web-service": "^0.6.0",
+    "@swizzyweb/swizzy-web-service": "^0.6.1",
     "express": "^5.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
