@@ -1,4 +1,4 @@
-# @swizzyweb/swizzy-frontend-template-web-service
+# swizzy-frontend-template-web-service
 
 Sample react and tailwind based swizzy frontend web service. The sample app has a react based frontend
 and a swizzy web service backend. A sample implementation of an api can be found in the
@@ -41,3 +41,7 @@ npm run server
 ## With swerve
 
 After build you can just run `swerve` in the root directory.
+
+## express update
+
+V0.2.3 upgrades express to v5.x which requires swerve v0.6.0 or later
