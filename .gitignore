@@ -1,5 +1,39 @@
-dist
-bundle
-node_modules
-logs
-appdata
+# Dependencies
+node_modules/
+
+# Production build artifacts
+dist/
+bundle/
+
+# Local data and logs
+logs/
+appdata/
+data/
+unknown/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Tools and settings
+.claude/
+.gemini/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local

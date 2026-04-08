@@ -4,46 +4,26 @@ import { FunnyJokeTeller } from "./FunnyJokeTeller";
 // Main App component
 const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100 font-sans antialiased flex flex-col">
+    <div className="app-root">
       {/* Header Section */}
-      <header className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-6 shadow-lg rounded-b-xl">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-4xl font-extrabold tracking-tight">
+      <header className="app-header">
+        <div className="header-container">
+          <h1 className="header-title">
             My Awesome SwizzyWeb Site
           </h1>
           <nav>
-            <ul className="flex space-x-6">
+            <ul className="nav-list">
               <li>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-200 transition duration-300 text-lg font-medium"
-                >
-                  Home
-                </a>
+                <a href="#" className="nav-link">Home</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-200 transition duration-300 text-lg font-medium"
-                >
-                  About
-                </a>
+                <a href="#" className="nav-link">About</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-200 transition duration-300 text-lg font-medium"
-                >
-                  Services
-                </a>
+                <a href="#" className="nav-link">Services</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-200 transition duration-300 text-lg font-medium"
-                >
-                  Contact
-                </a>
+                <a href="#" className="nav-link">Contact</a>
               </li>
             </ul>
           </nav>
@@ -51,64 +31,64 @@ const App = () => {
       </header>
 
       {/* Main Content Section */}
-      <main className="flex-grow container mx-auto p-8 py-12">
-        <section className="bg-white p-8 rounded-xl shadow-lg mb-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+      <main className="main-content">
+        <section className="welcome-section">
+          <h2 className="welcome-title">
             Welcome to Our Site!
           </h2>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="welcome-text">
             This is a sample SwizzyWeb website built with the power and
             flexibility of Tailwind CSS. Enjoy the clean design and responsive
             layout that adapts beautifully to any screen size. We've focused on
             creating a modern and user-friendly experience.
           </p>
-          <div className="mt-6 flex space-x-4">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+          <div className="button-row">
+            <button className="btn-primary">
               Learn More
             </button>
-            <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+            <button className="btn-secondary">
               Get Started
             </button>
           </div>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="features-grid">
           {/* Feature Card 1 */}
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
+          <div className="feature-card">
+            <h3 className="feature-card-title">
               Responsive Design
             </h3>
-            <p className="text-gray-600">
+            <p className="feature-card-text">
               Our website looks great on desktops, tablets, and mobile phones,
               ensuring a seamless experience for all users.
             </p>
           </div>
 
           {/* Feature Card 2 */}
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
-            <h3 className="2xl font-semibold text-gray-800 mb-3">Modern UI</h3>
-            <p className="text-gray-600">
+          <div className="feature-card">
+            <h3 className="feature-card-title">Modern UI</h3>
+            <p className="feature-card-text">
               Leveraging Tailwind CSS, we've crafted a clean, modern, and
               intuitive user interface.
             </p>
           </div>
 
           {/* Feature Card 3 */}
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
-            <h3 className="2xl font-semibold text-gray-800 mb-3">
+          <div className="feature-card">
+            <h3 className="feature-card-title">
               Easy to Customize
             </h3>
-            <p className="text-gray-600">
+            <p className="feature-card-text">
               The component-based structure makes it incredibly easy to extend
               and customize.
             </p>
           </div>
           {/* Feature Card 4 */}
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
-            <h3 className="2xl font-semibold text-gray-800 mb-3">
+          <div className="feature-card">
+            <h3 className="feature-card-title">
               Easy to add custom api's
             </h3>
-            <p className="text-gray-600">
+            <p className="feature-card-text">
               Adding api's is as simple as creating new controllers, checkout
               our funny joke API by clicking the button below.
             </p>
@@ -119,28 +99,22 @@ const App = () => {
       </main>
 
       {/* Footer Section */}
-      <footer className="bg-gray-800 text-white p-6 mt-8 rounded-t-xl shadow-inner">
-        <div className="container mx-auto text-center">
-          <p className="text-gray-400">
+      <footer className="app-footer">
+        <div className="footer-container">
+          <p className="footer-text">
             &copy; {new Date().getFullYear()} My Awesome SwizzyWeb Site. All
             rights reserved.
           </p>
-          <p className="text-gray-400 mt-2">
+          <p className="footer-text-spaced">
             Made with{" "}
             <span className="font-semibold text-white">@swizzyweb</span>
           </p>
-          <div className="flex justify-center space-x-4 mt-3">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-white transition duration-300"
-            >
+          <div className="footer-links">
+            <a href="#" className="footer-link">
               Privacy Policy
             </a>
-            <span className="text-gray-500">|</span>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-white transition duration-300"
-            >
+            <span className="footer-separator">|</span>
+            <a href="#" className="footer-link">
               Terms of Service
             </a>
           </div>

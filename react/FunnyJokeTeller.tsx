@@ -27,10 +27,7 @@ export function FunnyJokeTeller(props: any) {
   return (
     <section id="funny-joke">
       {" "}
-      <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 mt-5 mb-5"
-        onClick={getFunnyJoke}
-      >
+      <button className="joke-btn" onClick={getFunnyJoke}>
         Get funny joke
       </button>
       {joke && (
