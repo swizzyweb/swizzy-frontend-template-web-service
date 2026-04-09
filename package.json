@@ -7,7 +7,7 @@
   "author": "Jason Gallagher",
   "scripts": {
     "dev": "npm run build && npm run server",
-    "server": "swerve",
+    "server": "swerve --config web-service-config.local.example.json",
     "build:service": "tsc",
     "build": "npm run build:webpack && npm run build:service",
     "start:webpack": "webpack serve --config webpack.config.cjs",
