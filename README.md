@@ -1,47 +1,56 @@
 # swizzy-frontend-template-web-service
 
-Sample react and tailwind based swizzy frontend web service. The sample app has a react based frontend
-and a swizzy web service backend. A sample implementation of an api can be found in the
-routers/Api directory.
+Minimal starting point for a swizzyweb frontend service: a React + Tailwind
+frontend served by a swizzy web service backend. Ships with a bare page (no
+routes beyond static serving) — build your UI and API routes from here.
 
 ## Web service
 
-The Swizzy web service logic can be found in the src directory.
+The Swizzy web service logic lives in `src/`. Use the `swizzy-ai-skill` MCP
+tools (`create_router`, `create_controller`, `create_middleware`) to add API
+routes rather than hand-editing generated files.
 
 ## React
 
-The react code is in the react directory.
+The React code lives in `react/`, bundled separately by webpack (see below).
 
 ## Running
 
-## Install
+### Install
 
-```npm
+```sh
 npm install
 ```
 
-## Build and run immediately
+### Build and run immediately
 
-```npm
+```sh
 npm run dev
 ```
 
-## Only build
+### Only build
 
-```npm
+```sh
 npm run build
 ```
 
-## Running server after build
+### Running server after build
 
-```npm
+```sh
 npm run server
 ```
 
-## With swerve
+### With swerve
 
-After build you can just run `swerve` in the root directory.
+After build you can also just run `swerve` in the root directory.
 
-## express update
+### Lint
 
-V0.2.3 upgrades express to v5.x which requires swerve v0.6.0 or later
+```sh
+npm run lint
+npm run lint:fix
+```
+
+## Notes
+
+- Requires express v5.x and swerve v0.6.0 or later.

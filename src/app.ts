@@ -1,20 +1,14 @@
-import { FunnyJokeClient } from "./client/index.js";
-import { SampleFrontendWebService } from "./web-service.js";
+import { SwizzyFrontendTemplateWebService } from "./web-service.js";
 
-export interface GetSampleFrontendWebserviceProps {
-  serviceArgs: {
-    funnyJokeBaseUrl?: string;
-  };
+export interface GetSwizzyFrontendTemplateWebserviceProps {
+  serviceArgs: {};
 }
+
 export async function getWebservice(
-  props: GetSampleFrontendWebserviceProps & any,
+  props: GetSwizzyFrontendTemplateWebserviceProps & any,
 ) {
-  const state = {
-    funnyJokeClient: new FunnyJokeClient({
-      baseUrl: props.serviceArgs.funnyJokeBaseUrl,
-    }),
-  };
-  return new SampleFrontendWebService({
+  const state = {};
+  return new SwizzyFrontendTemplateWebService({
     ...props,
     ...props.serviceArgs,
     state,

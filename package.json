@@ -1,13 +1,23 @@
 {
   "name": "@swizzyweb/swizzy-frontend-template-web-service",
-  "version": "0.2.5",
-  "description": "Template for swizzyweb frontend web services",
-  "main": "dist/app.js",
+  "version": "0.3.0",
+  "description": "Minimal starting point for swizzyweb frontend web services",
+  "keywords": [
+    "react",
+    "swizzy-web-service",
+    "swizzyweb",
+    "tailwind",
+    "template",
+    "typescript",
+    "webpack"
+  ],
+  "license": "UNLICENSED",
+  "author": "",
   "type": "module",
-  "author": "Jason Gallagher",
+  "main": "dist/app.js",
   "scripts": {
     "dev": "npm run build && npm run server",
-    "server": "swerve --config web-service-config.local.example.json",
+    "server": "swerve --config web-service-config.local.json",
     "build:service": "tsc",
     "build": "npm run build:webpack && npm run build:service",
     "start:webpack": "webpack serve --config webpack.config.cjs",
@@ -15,14 +25,15 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "keywords": [
-    "react",
-    "webpack",
-    "tailwind",
-    "route-optimizer",
-    "typescript"
-  ],
-  "license": "MIT",
+  "dependencies": {
+    "@swizzyweb/express-unuse": "^1.0.2",
+    "@swizzyweb/swerve-manager": "^0.3.2",
+    "@swizzyweb/swizzy-common": "^0.3.3",
+    "@swizzyweb/swizzy-web-service": "^0.6.2",
+    "express": "^5.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
@@ -47,14 +58,5 @@
     "webpack": "^5.101.3",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^6.0.0"
-  },
-  "dependencies": {
-    "@swizzyweb/express-unuse": "^1.0.2",
-    "@swizzyweb/swerve-manager": "^0.3.2",
-    "@swizzyweb/swizzy-common": "^0.3.3",
-    "@swizzyweb/swizzy-web-service": "^0.6.2",
-    "express": "^5.2.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
   }
 }

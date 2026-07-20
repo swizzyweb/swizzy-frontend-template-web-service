@@ -1,26 +1,24 @@
 import { IWebServiceProps, WebService } from "@swizzyweb/swizzy-web-service";
 import { PageWebRouter } from "./routers/PageRouter/page-router.js";
-import { ApiWebRouter } from "./routers/ApiRouter/api-router.js";
-import { IFunnyJokeClient } from "./client/index.js";
 
-export interface SampleFrontendWebServiceState {
-  funnyJokeClient: IFunnyJokeClient;
+export interface SwizzyFrontendTemplateWebServiceState {
+
 }
 
-export interface SampleFrontendWebServiceProps
-  extends IWebServiceProps<SampleFrontendWebServiceState> {
+export interface SwizzyFrontendTemplateWebServiceProps
+  extends IWebServiceProps<SwizzyFrontendTemplateWebServiceState> {
   port: number;
   path?: string;
 }
 
-export class SampleFrontendWebService extends WebService<SampleFrontendWebServiceState> {
-  constructor(props: SampleFrontendWebServiceProps) {
+export class SwizzyFrontendTemplateWebService extends WebService<SwizzyFrontendTemplateWebServiceState> {
+  constructor(props: SwizzyFrontendTemplateWebServiceProps) {
     super({
       ...props,
-      name: "SampleFrontendWebService",
+      name: "SwizzyFrontendTemplateWebService",
       path: props.path ?? "",
       packageName: "@swizzyweb/swizzy-frontend-template-web-service",
-      routerClasses: [PageWebRouter, ApiWebRouter],
+      routerClasses: [PageWebRouter],
       middleware: [],
     });
   }

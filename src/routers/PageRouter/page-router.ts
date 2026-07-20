@@ -7,8 +7,8 @@ import {
   SwizzyRequestMiddleware,
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
-import { SampleFrontendWebServiceState } from "../../web-service.js";
-import path from "node:path";
+import { SwizzyFrontendTemplateWebServiceState } from "../../web-service.js";
+import path from "path";
 import express from "express";
 import { fileURLToPath } from "node:url";
 
@@ -19,9 +19,9 @@ const __dirname = path.dirname(__filename);
 export interface PageRouterState {}
 
 export interface PageRouterProps
-  extends IWebRouterProps<SampleFrontendWebServiceState, PageRouterState> {}
+  extends IWebRouterProps<SwizzyFrontendTemplateWebServiceState, PageRouterState> {}
 export class PageWebRouter extends WebRouter<
-  SampleFrontendWebServiceState,
+  SwizzyFrontendTemplateWebServiceState,
   PageRouterState
 > {
   constructor(props: PageRouterProps) {
@@ -42,10 +42,10 @@ export class PageWebRouter extends WebRouter<
 }
 
 const PageRouterStateConverter: StateConverter<
-  SampleFrontendWebServiceState,
+  SwizzyFrontendTemplateWebServiceState,
   PageRouterState
 > = async function (
-  props: StateConverterProps<SampleFrontendWebServiceState>,
+  props: StateConverterProps<SwizzyFrontendTemplateWebServiceState>,
 ): Promise<PageRouterState> {
   return { ...props.state };
 };

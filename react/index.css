@@ -4,96 +4,10 @@
 @tailwind utilities;
 
 @layer components {
-  /* Layout */
   .app-root {
-    @apply min-h-screen bg-gray-100 font-sans antialiased flex flex-col overflow-x-hidden;
+    @apply min-h-screen bg-gray-100 font-sans antialiased flex flex-col items-center justify-center;
   }
-
-  /* Header */
-  .app-header {
-    @apply bg-gradient-to-r from-blue-600 to-purple-700 text-white p-6 shadow-lg rounded-b-xl;
-  }
-  .header-container {
-    @apply container mx-auto flex flex-col gap-4 md:flex-row md:justify-between md:items-center;
-  }
-  .header-title {
-    @apply text-2xl font-extrabold tracking-tight md:text-4xl;
-  }
-
-  /* Nav */
-  .nav-list {
-    @apply flex flex-wrap gap-x-4 gap-y-2 md:flex-nowrap md:space-x-6;
-  }
-  .nav-link {
-    @apply text-white hover:text-blue-200 transition duration-300 text-base font-medium md:text-lg;
-  }
-
-  /* Main */
-  .main-content {
-    @apply flex-grow container mx-auto p-8 py-12;
-  }
-
-  /* Welcome section */
-  .welcome-section {
-    @apply bg-white p-8 rounded-xl shadow-lg mb-8;
-  }
-  .welcome-title {
-    @apply text-3xl font-bold text-gray-800 mb-4;
-  }
-  .welcome-text {
-    @apply text-gray-700 leading-relaxed text-lg;
-  }
-  .button-row {
-    @apply mt-6 flex space-x-4;
-  }
-
-  /* Buttons */
-  .btn-primary {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105;
-  }
-  .btn-secondary {
-    @apply bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105;
-  }
-
-  /* Feature cards */
-  .features-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
-  }
-  .feature-card {
-    @apply bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300;
-  }
-  .feature-card-title {
-    @apply text-2xl font-semibold text-gray-800 mb-3;
-  }
-  .feature-card-text {
-    @apply text-gray-600;
-  }
-
-  /* Joke component */
-  .joke-btn {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 mt-5 mb-5;
-  }
-
-  /* Footer */
-  .app-footer {
-    @apply bg-gray-800 text-white p-6 mt-8 rounded-t-xl shadow-inner;
-  }
-  .footer-container {
-    @apply container mx-auto text-center;
-  }
-  .footer-text {
-    @apply text-gray-400;
-  }
-  .footer-text-spaced {
-    @apply text-gray-400 mt-2;
-  }
-  .footer-links {
-    @apply flex justify-center space-x-4 mt-3;
-  }
-  .footer-link {
-    @apply text-gray-400 hover:text-white transition duration-300;
-  }
-  .footer-separator {
-    @apply text-gray-500;
+  .app-title {
+    @apply text-3xl font-bold text-gray-800;
   }
 }

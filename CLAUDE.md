@@ -24,7 +24,7 @@ npm run dev
 npm run server
 
 # Lint
-npm lint
+npm run lint
 
 # Lint with auto-fix
 npm run lint:fix
@@ -43,10 +43,11 @@ HTTP request
   → swerve (process runner / reverse proxy)
     → Express app (WebService)
       → PageWebRouter (path: "") — serves static bundle/ files
-      → ApiWebRouter (path: "api") — JSON API endpoints
-          → FunnyJokeController (GET /api/funnyJoke)
-              → FunnyJokeClient → external joke API
 ```
+
+This is a bare shell: no API routes exist yet. Add one with the
+`swizzy-ai-skill` MCP's `create_router`/`create_controller` tools rather than
+hand-editing generated files.
 
 ### Two separate build targets
 
@@ -61,20 +62,20 @@ HTTP request
 
 Each layer narrows the state type passed down from the service:
 
-- **WebService** (`src/web-service.ts`) — top-level; holds `SampleFrontendWebServiceState` (currently just `funnyJokeClient`).
+- **WebService** (`src/web-service.ts`) — top-level; holds `SwizzyFrontendTemplateWebServiceState` (currently empty).
 - **WebRouter** (`src/routers/*/`) — receives service state, converts it to a router-scoped state via a `StateConverter`, registers controllers and middleware.
-- **WebController** (`src/routers/ApiRouter/controllers/`) — receives router state, converts it to a controller-scoped state, registers a single route (`action` → path segment, `method` → HTTP verb).
+- **WebController** — receives router state, converts it to a controller-scoped state, registers a single route (`action` → path segment, `method` → HTTP verb).
 
-To add a new API endpoint: create a new `WebController` subclass and register it in the relevant router's `webControllerClasses` array. To add a new route group, create a new `WebRouter` subclass and register it in `SampleFrontendWebService`'s `routerClasses` array.
+To add a new API endpoint: create a new `WebRouter` (registered in `SwizzyFrontendTemplateWebService`'s `routerClasses` array) with a `WebController` subclass registered in its `webControllerClasses` array.
 
 ### Configuration (swerve)
 
 The service is launched by `swerve`, which reads a JSON config file:
 
 - `web-service-config.example.json` — example for production/Docker use (`packageName` field).
-- `web-service-config.local.example.json` — example for local dev (`servicePath: "."` loads from local dist/).
+- `web-service-config.local.json` — for local dev (`servicePath: "."` loads from local `dist/`).
 
-`serviceArgs` inside the service block (e.g. `funnyJokeBaseUrl`) are passed as props to `getWebservice()` in `src/app.ts`.
+`serviceArgs` inside the service block are passed as props to `getWebservice()` in `src/app.ts` — use these for configuration, not `process.env`.
 
 ### Docker
 

@@ -1,0 +1,9 @@
+{
+  "port": 3005,
+  "logLevel": "info",
+  "services": {
+    "SwizzyFrontendTemplateWebService": {
+      "servicePath": "."
+    }
+  }
+}
