@@ -1,4 +1,5 @@
 const DEFAULT_BASE_URL = "https://official-joke-api.appspot.com";
+const FETCH_TIMEOUT_MS = 5000;
 
 export interface Joke {
   id: number;
@@ -10,8 +11,9 @@ export interface Joke {
 export interface FunnyJokeClientProps {
   baseUrl?: string;
 }
+
 export interface IFunnyJokeClient {
-  getFunnyJoke(request: any): Promise<Joke>;
+  getFunnyJoke(): Promise<Joke>;
 }
 
 export class FunnyJokeClient implements IFunnyJokeClient {
@@ -19,11 +21,15 @@ export class FunnyJokeClient implements IFunnyJokeClient {
   constructor(props: FunnyJokeClientProps) {
     this.baseUrl = props.baseUrl ?? DEFAULT_BASE_URL;
   }
-  async getFunnyJoke(request: any): Promise<Joke> {
+
+  async getFunnyJoke(): Promise<Joke> {
     const response = await fetch(`${this.baseUrl}/jokes/random`, {
-      method: "get",
+      method: "GET",
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
-    const joke = await response.json();
-    return joke;
+    if (!response.ok) {
+      throw new Error(`getFunnyJoke returned status ${response.status}`);
+    }
+    return response.json() as Promise<Joke>;
   }
 }
