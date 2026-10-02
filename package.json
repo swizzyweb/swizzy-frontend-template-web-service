@@ -1,6 +1,6 @@
 {
   "name": "@swizzyweb/swizzy-frontend-template-web-service",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Minimal starting point for swizzyweb frontend web services",
   "keywords": [
     "react",
