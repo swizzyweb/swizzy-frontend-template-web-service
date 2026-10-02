@@ -30,6 +30,13 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
+      {
+        // webpack 5's built-in asset modules — no extra loader dependency
+        // needed. Covers both a JS/TS `import logo from "./logo.png"` and a
+        // CSS `url(...)` background-image reference.
+        test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   resolve: {
@@ -39,6 +46,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./react/index.html",
       filename: "index.html",
+      // Copies the file into the output dir and injects the <link
+      // rel="icon"> tag automatically — no separate copy step/manual tag
+      // needed. Without this, every generated site 404s on /favicon.ico.
+      favicon: "./react/favicon.ico",
     }),
     new MiniCssExtractPlugin({
       filename: "css/styles.css",

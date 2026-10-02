@@ -13,6 +13,11 @@ routes rather than hand-editing generated files.
 ## React
 
 The React code lives in `react/`, bundled separately by webpack (see below).
+Image imports (`import logo from "./logo.png"`, or a CSS `url(...)` background
+image) work out of the box — `webpack.config.cjs` has an asset-module rule for
+common image extensions. A default `react/favicon.ico` is included and wired
+into `HtmlWebpackPlugin`'s `favicon` option, so generated sites don't 404 on
+`/favicon.ico`.
 
 ## Running
 
